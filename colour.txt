@@ -1,0 +1,5 @@
+primary #15c39a
+secondary #ffcd69
+text #302c78
+
+#de2f2f

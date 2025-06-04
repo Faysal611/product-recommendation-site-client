@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Layout from "./Layout";
 import Home from "./components/Home";
 import Error from "./components/Error";
+import Queries from "./components/Queries";
+import Contact from "./components/Contact";
 
 export const router = createBrowserRouter([
     {
@@ -12,6 +14,14 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home
+            },
+            {
+                path: "/queries",
+                Component: Queries
+            },
+            {
+                path: "/contact",
+                Component: Contact
             }
         ]
     }

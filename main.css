@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+    themes: light --default
+}
+
+body {
+    font-family: "Poppins";
+    overflow-x: hidden;
+}
+
+@layer utilities {
+    .custom-transition {
+        transition-property: background-color, padding;
+        transition-duration: 300ms, 200ms;
+        
+    }
+}
