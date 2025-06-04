@@ -4,6 +4,8 @@ import Home from "./components/Home";
 import Error from "./components/Error";
 import Queries from "./components/Queries";
 import Contact from "./components/Contact";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ export const router = createBrowserRouter([
             {
                 path: "/contact",
                 Component: Contact
+            },
+            {
+                path: "/signin",
+                Component: Signin
+            },
+            {
+                path: "/signup",
+                Component: Signup
             }
         ]
     }
