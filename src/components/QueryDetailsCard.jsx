@@ -19,7 +19,7 @@ const QueryDetailsCard = ({ data }) => {
         formObj.recommender.email = user.email;
         formObj.recommender.username = user.displayName;
         formData.date = new Date();
-        
+
         axios.post("http://localhost:3000/postRecommendation", formObj)
         .then(res => {
             console.log(res.data)
