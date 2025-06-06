@@ -28,10 +28,17 @@ const MyQueries = () => {
     return (
         <div className='w-11/12 mx-auto mt-10 mb-20'>
             <Link to={"/addQuery"}><button className=' py-2 rounded-xl font-semibold cursor-pointer active:-bottom-[1px] duration-100 w-[200px] relative left-1/2 -translate-x-1/2 bg-[#15c39a]'>+ Add Query</button></Link>
-            <p className='text-center mt-10 mb-6 text-4xl font-bold text-[#302c78]'>Queries Added by You</p>
+            
 
             {
-                allData.length === 0 ? <p className='text-3xl font-bold'>You didn't add any query!</p> : allData.map((data, index) =><MyQuriesCard key={index} data={data} setRefresh={setRefresh}></MyQuriesCard>)
+                allData.length === 0 ? <div>
+                    <p className='text-center mt-10 mb-6 text-3xl font-bold text-[#302c78]'>No Queries Found</p>
+                    <img src="empty.svg" alt="empty" className='w-1/3 mx-auto' />
+                </div> : 
+                    <>
+                        <p className='text-center mt-10 mb-6 text-4xl font-bold text-[#302c78]'>Queries Added by You</p>
+                        {allData.map((data, index) =><MyQuriesCard key={index} data={data} setRefresh={setRefresh}></MyQuriesCard>)}
+                    </>
             }
         </div>
     );
