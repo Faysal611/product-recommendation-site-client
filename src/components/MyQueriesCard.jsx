@@ -46,8 +46,7 @@ const MyQuriesCard = ({ data, setRefresh }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios.delete("http://localhost:3000/deleteQuery", { data: data })
-                .then((res) => {
-                    console.log(res.data)
+                .then(() => {
                     setRefresh(prev => !prev);
                     Swal.fire({
                         position: "top-end",

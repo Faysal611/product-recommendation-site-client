@@ -26,7 +26,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/queries",
-                Component: Queries
+                Component: Queries,
+                loader: () => fetch("http://localhost:3000/queries")
             },
             {
                 path: "/contact",

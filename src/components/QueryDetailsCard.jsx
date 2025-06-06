@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import useAllContext from '../hooks/useAllContext';
 import Loading from './Loading';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const QueryDetailsCard = ({ data }) => {
     const {user, loading} = useAllContext();
@@ -21,8 +22,14 @@ const QueryDetailsCard = ({ data }) => {
         formData.date = new Date();
 
         axios.post("http://localhost:3000/postRecommendation", formObj)
-        .then(res => {
-            console.log(res.data)
+        .then(() => {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500
+              });
         })
 
         document.getElementById("my_modal_5").close();
