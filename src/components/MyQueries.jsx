@@ -6,13 +6,17 @@ import Loading from './Loading';
 import MyQuriesCard from './MyQueriesCard';
 
 const MyQueries = () => {
-    const {user} = useAllContext();
+    const {user, firebaseAccessToken} = useAllContext();
     const [loading, setLoading] = useState(true);
     const [allData, setAllData] = useState([]);
     const [refresh, setRefresh] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/myQuries?email=${user.email}`)
+        axios.get(`http://localhost:3000/myQuries?email=${user.email}`, {
+            headers: {
+                Authorization: `Bearer ${firebaseAccessToken}`
+            }
+        })
         .then(res => {
             setAllData(res.data);
             setLoading(false);

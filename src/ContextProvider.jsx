@@ -7,10 +7,12 @@ export const AllContext = createContext();
 const ContextProvider = ({children}) => {
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
-    
+    const [firebaseAccessToken, setFirebaseAccessToken] = useState(null);
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            setFirebaseAccessToken(currentUser.accessToken)
             setLoading(false)
         })
         return () => unsubscribe();
@@ -38,7 +40,8 @@ const ContextProvider = ({children}) => {
         setLoading,
         signInWithEmail,
         signUpWithEmail,
-        signUpWithGoogle
+        signUpWithGoogle,
+        firebaseAccessToken
     }
 
     return (

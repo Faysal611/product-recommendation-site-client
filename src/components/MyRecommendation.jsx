@@ -5,12 +5,16 @@ import axios from 'axios';
 import RecTableRow from './RecTableRow';
 
 const MyRecommendation = () => {
-    const {user, loading} = useAllContext();
+    const {user, loading, firebaseAccessToken} = useAllContext();
     const [allData, setAllData] = useState([]);
     const [refresh, setRefresh] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/myRecommendations?email=${user.email}`).then(res => {
+        axios.get(`http://localhost:3000/myRecommendations?email=${user.email}`, {
+            headers: {
+                Authorization: `Bearer ${firebaseAccessToken}`
+            }
+        }).then(res => {
             setAllData(res.data)
         })
     }, [refresh])
