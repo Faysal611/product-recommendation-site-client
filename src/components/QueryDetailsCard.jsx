@@ -5,7 +5,7 @@ import Loading from './Loading';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const QueryDetailsCard = ({ data }) => {
+const QueryDetailsCard = ({ data, setRefresh }) => {
     const {user, loading} = useAllContext();
 
     const handleSubmit = e => {
@@ -30,6 +30,7 @@ const QueryDetailsCard = ({ data }) => {
                 showConfirmButton: false,
                 timer: 1500
               });
+              setRefresh(prev => !prev)
         })
 
         document.getElementById("my_modal_5").close();

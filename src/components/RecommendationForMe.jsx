@@ -8,7 +8,7 @@ const RecommendationForMe = () => {
     const {user} = useAllContext();
     const [loading, setLoading] = useState(true);
     const [allData, setAllData] = useState([]);
-
+    
     useEffect(() => {
         axios.get(`http://localhost:3000/recommendationsForMe?email=${user.email}`)
         .then(res => {

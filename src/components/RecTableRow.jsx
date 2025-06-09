@@ -15,7 +15,7 @@ const RecTableRow = ({ index, data, setRefresh }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/deleteRecommendation?_id=${data._id}`)
+                axios.delete(`http://localhost:3000/deleteRecommendation?_id=${data._id}&queryID=${data.queryID}`)
                     .then(() => {
                         setRefresh(prev => !prev);
                         Swal.fire({

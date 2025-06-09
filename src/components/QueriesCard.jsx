@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const QueriesCard = ({data}) => {
+const QueriesCard = ({data, twoCol, threeCol}) => {
     return (
-        <div className='flex gap-5 p-5 bg-gray-200 my-10 rounded-2xl border border-gray-300 hover:border-gray-600 duration-200'>
-            <div className='flex flex-col justify-center'>
-                <img className='w-[550px]' src={data.productPhotoURL} alt="image" />
+        <div className={`flex ${twoCol || threeCol ? "flex-col" : ""}  p-5 bg-gray-200 my-10 rounded-2xl border border-gray-300 hover:border-gray-600 duration-200`}>
+            <div className='flex flex-col justify-center items-center'>
+                <img className={`${twoCol ? "w-[650px]" : "w-[550px]"}`} src={data.productPhotoURL} alt="image" />
             </div>
-            <div className="divider divider-horizontal divider-success"></div>
+            {
+                twoCol || threeCol ? <div className="divider divider-success"></div> : <div className="divider divider-horizontal divider-success"></div>
+            }
             <div className='flex flex-col justify-between'>
                 <p className='font-medium text-lg text-[#302c78]'><span className='text-2xl font-bold font-["WDXL_Lubrifont_TC"]'>Title:</span> {data.queryTitle}</p>
                 <p className='font-medium text-lg text-[#302c78]'><span className='text-2xl font-bold font-["WDXL_Lubrifont_TC"]'>Product Name:</span> {data.productName}</p>
@@ -15,7 +17,9 @@ const QueriesCard = ({data}) => {
                 <p className='font-medium text-lg text-[#302c78]'><span className='text-2xl font-bold font-["WDXL_Lubrifont_TC"] text-red-500'>Boycott Reason:</span> {data.boycottingReason}</p>
 
             </div>
-            <div className="divider divider-horizontal divider-success"></div>
+            {
+                twoCol || threeCol ? <div className="divider divider-success"></div> : <div className="divider divider-horizontal divider-success"></div>
+            }
             <div className='flex flex-col justify-around'>
                 <Link to={`/queryDetails/${data._id}`}><button className="btn w-max text-white bg-[#15c39a]">Recommend</button></Link>
             </div>
