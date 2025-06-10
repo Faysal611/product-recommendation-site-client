@@ -14,4 +14,12 @@ body {
         transition-duration: 300ms, 200ms;
         
     }
+
+    .footer-bg {
+        background: url("/footer-bg.svg");
+        background-size: cover;
+        background-position: 10px -180px;
+        background-repeat: no-repeat;
+        border-top: 1px solid rgba(128, 128, 128, 0.37);
+    }
 }

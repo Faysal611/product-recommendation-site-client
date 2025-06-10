@@ -3,6 +3,7 @@ import useAllContext from '../hooks/useAllContext';
 import Swal from 'sweetalert2';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../../firebase.config';
+import { Link } from 'react-router';
 
 const Signup = () => {
     const {signUpWithEmail, signUpWithGoogle} = useAllContext();
@@ -47,7 +48,7 @@ const Signup = () => {
 
     return (
         <div className='m-12 flex gap-2'>
-            <div className='w-1/2 bg-[linear-gradient(to_right,rgba(255,255,255,0.89),rgba(255,255,255,0.63),rgba(255,255,255,0.89)),url("home-bg.jpg")] bg-cover flex flex-col items-center bg-no-repeat bg-[0px_-100px] pt-20'>
+            <div className='w-1/2 bg-[linear-gradient(to_right,rgba(255,255,255,0.89),rgba(255,255,255,0.53),rgba(255,255,255,0.89)),url("home-bg.jpg")] bg-cover flex flex-col items-center bg-no-repeat bg-[0px_-70px] pt-20'>
                 <img src="logo.png" className='h-1/2 w-max bg-white' alt="" />
                 <p className='text-4xl text-[#15c39a] bg-white font-bold relative -top-4'>Fill out the form to Sign Up</p>
             </div>
@@ -70,11 +71,13 @@ const Signup = () => {
 
                     <button className="btn bg-[#ffbf33] mt-4 text-[#302c78]">Sign Up</button>
                 </form>
+                <p className='text-[#302c78] ml-2 mt-2'>Already Registered? <Link className='font-semibold underline underline-offset-2' to={"/signin"}>Sign In now!</Link></p> 
                 <div className="divider divider-neutral">OR</div>
                 <button onClick={handleGoogle} className="btn bg-white text-black border-[#bababa]">
                     <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
                     Sign Up with Google
                 </button>
+                
             </div>
 
         </div>

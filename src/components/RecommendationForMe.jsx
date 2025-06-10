@@ -29,7 +29,13 @@ const RecommendationForMe = () => {
 
     return (
         <div className="overflow-x-auto w-11/12 mx-auto my-17">
-            <table className="table border border-gray-400 border-collapse">
+            {
+                allData.length === 0 ? <div>
+                    <p className='text-center mt-10 mb-6 text-3xl font-bold text-[#302c78]'>You Didn't Get Any Recommendations Yet!</p>
+                    <img src="empty.svg" alt="empty" className='w-1/3 mx-auto' />
+                </div> :
+                    <>
+                        <table className="table border border-gray-400 border-collapse">
                 {/* head */}
                 <thead>
                     <tr>
@@ -46,6 +52,9 @@ const RecommendationForMe = () => {
                     }
                 </tbody>
             </table>
+                    </>
+            }
+            
         </div>
     );
 };
