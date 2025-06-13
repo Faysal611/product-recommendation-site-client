@@ -21,7 +21,7 @@ const QueryDetailsCard = ({ data, setRefresh }) => {
         formObj.recommender.username = user.displayName;
         formData.date = new Date();
 
-        axios.post("http://localhost:3000/postRecommendation", formObj)
+        axios.post("https://product-recommendation-system-serve.vercel.app/postRecommendation", formObj)
         .then(() => {
             Swal.fire({
                 position: "top-end",

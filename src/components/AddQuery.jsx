@@ -18,7 +18,7 @@ const AddQuery = () => {
         formObj.recommendationCount = 0;
         formObj.date = new Date();
 
-        axios.post("http://localhost:3000/addRecipe", formObj)
+        axios.post("https://product-recommendation-system-serve.vercel.app/addRecipe", formObj)
             .then(res => {
                 if (res.data.acknowledged) {
                     Swal.fire({

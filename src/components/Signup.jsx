@@ -47,13 +47,13 @@ const Signup = () => {
         }
 
     return (
-        <div className='m-12 flex gap-2'>
-            <div className='w-1/2 bg-[linear-gradient(to_right,rgba(255,255,255,0.89),rgba(255,255,255,0.53),rgba(255,255,255,0.89)),url("home-bg.jpg")] bg-cover flex flex-col items-center bg-no-repeat bg-[0px_-70px] pt-20'>
-                <img src="logo.png" className='h-1/2 w-max bg-white' alt="" />
-                <p className='text-4xl text-[#15c39a] bg-white font-bold relative -top-4'>Fill out the form to Sign Up</p>
+        <div className='m-12 flex gap-2 max-sm:flex-col'>
+            <div className='w-1/2 max-sm:w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.89),rgba(255,255,255,0.53),rgba(255,255,255,0.89)),url("home-bg.jpg")] bg-cover flex flex-col items-center bg-no-repeat bg-[0px_-70px] max-sm:bg-[0px_-15px] pt-20 max-sm:pt-0'>
+                <img src="logo.png" className='h-1/2 w-max' alt="" />
+                <p className='text-4xl max-sm:text-3xl text-[#15c39a] max-sm:bg-[#ffffff72] bg-white font-bold relative -top-4 max-sm:text-center'>Fill out the form to Sign Up</p>
             </div>
 
-            <div className='flex flex-col w-1/2'>
+            <div className='flex flex-col w-1/2 max-sm:w-full'>
                 <form onSubmit={handleSignUp} className="fieldset border-gray-300 border-2 h-max rounded-box w-full p-4 mt-12">
                     <legend className="fieldset-legend text-2xl text-[#302c78]">Sign Up</legend>
 

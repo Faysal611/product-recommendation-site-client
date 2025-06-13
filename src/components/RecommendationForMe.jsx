@@ -10,7 +10,7 @@ const RecommendationForMe = () => {
     const [allData, setAllData] = useState([]);
     
     useEffect(() => {
-        axios.get(`http://localhost:3000/recommendationsForMe?email=${user.email}`, {
+        axios.get(`https://product-recommendation-system-serve.vercel.app/recommendationsForMe?email=${user.email}`, {
             headers: {
                 Authorization: `Bearer ${firebaseAccessToken}`
             }
@@ -32,7 +32,7 @@ const RecommendationForMe = () => {
             {
                 allData.length === 0 ? <div>
                     <p className='text-center mt-10 mb-6 text-3xl font-bold text-[#302c78]'>You Didn't Get Any Recommendations Yet!</p>
-                    <img src="empty.svg" alt="empty" className='w-1/3 mx-auto' />
+                    <img src="empty.svg" alt="empty" className='w-1/3 max-sm:w-1/2 mx-auto' />
                 </div> :
                     <>
                         <table className="table border border-gray-400 border-collapse">

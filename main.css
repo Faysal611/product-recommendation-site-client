@@ -22,4 +22,16 @@ body {
         background-repeat: no-repeat;
         border-top: 1px solid rgba(128, 128, 128, 0.37);
     }
+
+    @media (max-width: 640px) {
+        .footer-phone {
+        background: rgb(228, 228, 228);
+        }
+    }
+
+        .intro-bg {
+          background-image: linear-gradient(to right, rgba(255, 255, 255, 0.89), rgba(255, 255, 255, 0.43), rgba(255, 255, 255, 0.89)), url("/home-bg.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
 }

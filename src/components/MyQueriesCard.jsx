@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 const MyQuriesCard = ({ data, setRefresh }) => {
     const { user } = useAllContext();
-
+    console.log(data)
     const handleUpdateQuery = e => {
         e.preventDefault();
 
@@ -17,9 +17,10 @@ const MyQuriesCard = ({ data, setRefresh }) => {
         formObj.user.email = user.email;
         formObj.user.userName = user.displayName;
         formObj.user.photoURL = user.photoURL;
+        formObj._id = data._id;
         formObj.date = new Date();
 
-        axios.put("http://localhost:3000/updateQuery", formObj)
+        axios.put("https://product-recommendation-system-serve.vercel.app/updateQuery", formObj)
             .then(() => {
                 setRefresh(prev => !prev);
                 Swal.fire({
@@ -31,7 +32,7 @@ const MyQuriesCard = ({ data, setRefresh }) => {
                 });
             })
 
-        document.getElementById("my_modal_1").close();
+        document.getElementById(`my_modal_${data._id}`).close();
     }
 
     const handleDelete = () => {
@@ -45,7 +46,7 @@ const MyQuriesCard = ({ data, setRefresh }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete("http://localhost:3000/deleteQuery", { data: data })
+                axios.delete("https://product-recommendation-system-serve.vercel.app/deleteQuery", { data: data })
                 .then(() => {
                     setRefresh(prev => !prev);
                     Swal.fire({
@@ -67,11 +68,11 @@ const MyQuriesCard = ({ data, setRefresh }) => {
     }
 
     return (
-        <div className='flex gap-5 p-5 bg-gray-200 my-10 rounded-2xl border border-gray-300 hover:border-gray-600 duration-200'>
+        <div className='flex max-sm:flex-col gap-5 max-sm:gap-1 p-5 bg-gray-200 my-10 rounded-2xl border border-gray-300 hover:border-gray-600 duration-200'>
             <div className='flex flex-col justify-center'>
                 <img className='w-[550px]' src={data.productPhotoURL} alt="image" />
             </div>
-            <div className="divider divider-horizontal divider-success"></div>
+            <div className="divider divider-horizontal max-sm:divider-vertical divider-success"></div>
             <div className='flex flex-col justify-between'>
                 <p className='font-medium text-lg text-[#302c78]'><span className='text-2xl font-bold font-["WDXL_Lubrifont_TC"]'>Title:</span> {data.queryTitle}</p>
                 <p className='font-medium text-lg text-[#302c78]'><span className='text-2xl font-bold font-["WDXL_Lubrifont_TC"]'>Product Name:</span> {data.productName}</p>
@@ -79,12 +80,12 @@ const MyQuriesCard = ({ data, setRefresh }) => {
                 <p className='font-medium text-lg text-[#302c78]'><span className='text-2xl font-bold font-["WDXL_Lubrifont_TC"] text-red-500'>Boycott Reason:</span> {data.boycottingReason}</p>
 
             </div>
-            <div className="divider divider-horizontal divider-success"></div>
-            <div className='flex flex-col justify-around items-center'>
+            <div className="divider divider-horizontal max-sm:divider-vertical divider-success"></div>
+            <div className='flex flex-col max-sm:gap-2 justify-around items-center'>
                 <Link to={`/queryDetails/${data._id}`}><button className="btn w-max text-white bg-[#15c39a]">View Details</button></Link>
                 {/* Open the modal using document.getElementById('ID').showModal() method */}
-                <button className="btn bg-[#ffcd69]" onClick={() => document.getElementById('my_modal_1').showModal()}>Update</button>
-                <dialog id="my_modal_1" className="modal">
+                <button className="btn bg-[#ffcd69]" onClick={() => document.getElementById(`my_modal_${data._id}`).showModal()}>Update</button>
+                <dialog id={`my_modal_${data._id}`} className="modal">
                     <div className="modal-box">
                         <div className="modal-action">
                             <form onSubmit={handleUpdateQuery} className="fieldset border-gray-300 border-2 h-max rounded-box w-full p-4">

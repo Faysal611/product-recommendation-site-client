@@ -8,7 +8,7 @@ const HomeQueries = () => {
     const [allData, setAllData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/getLatest")
+        axios.get("https://product-recommendation-system-serve.vercel.app/getLatest")
         .then((res) => {
             setAllData(res.data)
             setLoading(false)

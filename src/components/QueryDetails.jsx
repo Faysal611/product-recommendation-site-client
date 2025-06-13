@@ -13,7 +13,7 @@ const QueryDetails = () => {
     const [recCount, setRecCount] = useState(allData.length);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/getQueryRecommendations?queryID=${data._id}`)
+        axios.get(`https://product-recommendation-system-serve.vercel.app/getQueryRecommendations?queryID=${data._id}`)
         .then(res => {
             setAllData(res.data);
             setRecCount(res.data.length);

@@ -12,7 +12,7 @@ const MyQueries = () => {
     const [refresh, setRefresh] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/myQuries?email=${user.email}`, {
+        axios.get(`https://product-recommendation-system-serve.vercel.app/myQuries?email=${user.email}`, {
             headers: {
                 Authorization: `Bearer ${firebaseAccessToken}`
             }

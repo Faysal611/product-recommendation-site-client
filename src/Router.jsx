@@ -22,12 +22,14 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: Home
+                Component: Home,
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: "/queries",
                 Component: Queries,
-                loader: () => fetch("http://localhost:3000/queries")
+                loader: () => fetch("https://product-recommendation-system-serve.vercel.app/queries"),
+
             },
             {
                 path: "/contact",
@@ -60,7 +62,7 @@ export const router = createBrowserRouter([
             {
                 path: "/queryDetails/:queryID",
                 Component: QueryDetails,
-                loader: ({ params }) => fetch(`http://localhost:3000/query/${params.queryID}`),
+                loader: ({ params }) => fetch(`https://product-recommendation-system-serve.vercel.app/query/${params.queryID}`),
                 hydrateFallbackElement: <Loading></Loading>
             }
         ]

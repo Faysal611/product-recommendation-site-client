@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const QueriesCard = ({data, twoCol, threeCol}) => {
     return (
-        <div className={`flex ${twoCol || threeCol ? "flex-col" : ""}  p-5 bg-gray-200 my-10 rounded-2xl border border-gray-300 hover:border-gray-600 duration-200`}>
+        <div className={`flex max-sm:gap-2 max-sm:flex-col ${twoCol || threeCol ? "flex-col" : ""}  p-5 bg-gray-200 my-10 rounded-2xl border border-gray-300 hover:border-gray-600 duration-200`}>
             <div className='flex flex-col justify-center items-center'>
                 <img className={`${twoCol ? "w-[650px]" : "w-[550px]"}`} src={data.productPhotoURL} alt="image" />
             </div>

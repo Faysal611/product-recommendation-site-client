@@ -10,7 +10,7 @@ const MyRecommendation = () => {
     const [refresh, setRefresh] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/myRecommendations?email=${user.email}`, {
+        axios.get(`https://product-recommendation-system-serve.vercel.app/myRecommendations?email=${user.email}`, {
             headers: {
                 Authorization: `Bearer ${firebaseAccessToken}`
             }

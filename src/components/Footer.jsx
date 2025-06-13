@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer-bg footer sm:footer-horizontal bg-base-200 text-base-content p-12 mt-12">
+        <footer className="footer-bg footer-phone footer sm:footer-horizontal text-base-content p-12 mt-12">
             <aside>
-                <img src="logo.png" className='w-50' />
+                <img src="logo.png" className='w-50 max-sm:w-30' />
                 <p className='relative -top-5 font-semibold'>
                     Product Recommendation System
 
