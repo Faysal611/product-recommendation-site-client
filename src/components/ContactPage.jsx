@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react"
+import UseSetTitle from "../hooks/UseSetTitle";
 
 export default function ContactPage() {
     const [name, setName] = useState("");
@@ -11,6 +12,8 @@ export default function ContactPage() {
 
     const primary = "#10b69e";
     const accent = "#fdbe32";
+
+    UseSetTitle("Contact");
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -3,6 +3,7 @@ import QueriesCard from './QueriesCard';
 import Loading from './Loading';
 import axios from 'axios';
 import useScrollToTop from '../hooks/useScrollToTop';
+import UseSetTitle from '../hooks/UseSetTitle';
 
 const Queries = () => {
     const [initialData, setInitialData] = useState([]);
@@ -14,7 +15,8 @@ const Queries = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useScrollToTop();
-
+    UseSetTitle("Queries");
+    
     useEffect(() => {
         const getData = async () => {
             const { data } = await axios.get("https://product-recommendation-system-serve.vercel.app/queries")

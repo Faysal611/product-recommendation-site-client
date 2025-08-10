@@ -3,6 +3,7 @@ import useAllContext from '../hooks/useAllContext';
 import Loading from './Loading';
 import axios from 'axios';
 import RecTableRowForMe from './RecTableRowForMe';
+import UseSetTitle from '../hooks/UseSetTitle';
 
 const RecommendationForMe = () => {
     const {user, firebaseAccessToken} = useAllContext();
@@ -26,6 +27,8 @@ const RecommendationForMe = () => {
             <Loading></Loading>
         )
     }
+
+    UseSetTitle("Recommendation For Me")
 
     return (
         <div className="overflow-x-auto w-11/12 mx-auto my-17">
