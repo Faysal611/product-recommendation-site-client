@@ -12,7 +12,7 @@ const NewsLetter = () => {
                 <input className='bg-white outline outline-gray-300 w-[400px] h-[50px] focus:outline-[#15c39a] text-xl placeholder:text-gray-400 rounded-tl-3xl rounded-bl-3xl pl-6 placeholder:text-xl' placeholder='user@email.com' type="text" />
                 <button className='h-[50px] px-4 bg-[#15c39a] rounded-br-3xl cursor-pointer rounded-tr-3xl text-white font-semibold'>Subscribe</button>
             </div>
-            <p className='text-gray-400 text-xl mb-10 mt-4'>We promise not to spam you!</p>
+            <p className='text-gray-500 text-xl mb-10 mt-4'>We promise not to spam you!</p>
         </div>
     );
 };
