@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import useAllContext from '../hooks/useAllContext';
 import Loading from './Loading';
 import MyQuriesCard from './MyQueriesCard';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 const MyQueries = () => {
     const {user, firebaseAccessToken} = useAllContext();
@@ -11,6 +12,7 @@ const MyQueries = () => {
     const [allData, setAllData] = useState([]);
     const [refresh, setRefresh] = useState(true);
 
+    useScrollToTop();
     useEffect(() => {
         axios.get(`https://product-recommendation-system-serve.vercel.app/myQuries?email=${user.email}`, {
             headers: {

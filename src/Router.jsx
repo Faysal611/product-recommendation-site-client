@@ -3,7 +3,6 @@ import Layout from "./Layout";
 import Home from "./components/Home";
 import Error from "./components/Error";
 import Queries from "./components/Queries";
-import Contact from "./components/Contact";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Private from "./components/Private";
@@ -13,6 +12,7 @@ import MyRecommendation from "./components/MyRecommendation";
 import AddQuery from "./components/AddQuery";
 import QueryDetails from "./components/QueryDetails";
 import Loading from "./components/Loading";
+import ContactPage from "./components/ContactPage";
 
 export const router = createBrowserRouter([
     {
@@ -28,12 +28,10 @@ export const router = createBrowserRouter([
             {
                 path: "/queries",
                 Component: Queries,
-                loader: () => fetch("https://product-recommendation-system-serve.vercel.app/queries"),
-
             },
             {
                 path: "/contact",
-                Component: Contact
+                Component: ContactPage
             },
             {
                 path: "/signin",

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import useAllContext from '../hooks/useAllContext';
 import Swal from 'sweetalert2';
 
 const Signin = () => {
     const { signInWithEmail, signUpWithGoogle } = useAllContext()
-    
+    const navigate = useNavigate();
+
     const handleSubmit = e => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -18,25 +19,26 @@ const Signin = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "Your work has been saved",
+                    title: "Signin successful!",
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1000
                   });
+                navigate("/");
             }
         })
     }
 
     const handleGoogle = () => {
         signUpWithGoogle()
-        .then(res => res.json())
         .then(() => {
             Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: "Your work has been saved",
+                title: "Signin successful!",
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1000
               });
+            navigate("/");
         })
     }
 

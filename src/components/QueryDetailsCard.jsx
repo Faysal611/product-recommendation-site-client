@@ -28,7 +28,7 @@ const QueryDetailsCard = ({ data, setRefresh }) => {
                 icon: "success",
                 title: "Your work has been saved",
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1000
               });
               setRefresh(prev => !prev)
         })

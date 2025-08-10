@@ -1,9 +1,13 @@
 import React from 'react';
+import loadingAnimation from "../../public/Loading.json";
+import Lottie from 'lottie-react';
 
 const Loading = () => {
     return (
-        <div className='flex justify-center my-[210px]'>
-            <span className="loading loading-spinner text-neutral w-[150px]"></span>
+        <div className='flex justify-center mb-[230px] mt-[200px]'>
+            <div className='w-[200px] h-[200px]'>
+                <Lottie animationData={loadingAnimation} loop={true} ></Lottie>
+            </div>
         </div>
     );
 };

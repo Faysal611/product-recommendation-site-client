@@ -23,7 +23,7 @@ const RecTableRow = ({ index, data, setRefresh }) => {
                             icon: "success",
                             title: "Deleted Successfully!",
                             showConfirmButton: false,
-                            timer: 1500
+                            timer: 1000
                         });
                     })
             }

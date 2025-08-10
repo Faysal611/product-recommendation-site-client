@@ -28,7 +28,7 @@ const MyQuriesCard = ({ data, setRefresh }) => {
                     icon: "success",
                     title: "Updated Successfully!",
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1000
                 });
             })
 
@@ -54,7 +54,7 @@ const MyQuriesCard = ({ data, setRefresh }) => {
                         icon: "success",
                         title: "Deleted Successfully!",
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 1000
                     });
                 })
             }

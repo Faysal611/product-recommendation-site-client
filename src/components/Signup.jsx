@@ -3,11 +3,11 @@ import useAllContext from '../hooks/useAllContext';
 import Swal from 'sweetalert2';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../../firebase.config';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const Signup = () => {
     const {signUpWithEmail, signUpWithGoogle} = useAllContext();
-
+    const navigate = useNavigate();
     const handleSignUp = e => {
         e.preventDefault();
         const username = e.target.username.value;
@@ -24,25 +24,26 @@ const Signup = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "Your work has been saved",
+                    title: "Signup successful!",
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1000
                   });
+                navigate("/");
             })
         })
     }
 
     const handleGoogle = () => {
-            signUpWithGoogle()
-            .then(res => res.json())
+        signUpWithGoogle()
             .then(() => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "Your work has been saved",
+                    title: "Signup successful!",
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1000
                   });
+                navigate("/");
             })
         }
 

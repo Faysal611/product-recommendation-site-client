@@ -1,8 +1,8 @@
 ---
 
-# Product Recommendation System
+# Product Recommendation Hub
 
-This repository contains the client-side application for a product recommendation system, allowing users to post product recommendations and submit queries.
+This repository contains the client-side application for a Product Recommendation Hub, allowing users to post product recommendations and submit queries.
 
 ---
 
@@ -98,4 +98,4 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 
 ---
 
-Feel free to explore the code and contribute to making this product recommendation system even better!
+Feel free to explore the code and contribute to making this Product Recommendation Hub even better!

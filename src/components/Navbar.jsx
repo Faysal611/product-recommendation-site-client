@@ -25,7 +25,7 @@ const Navbar = () => {
                 icon: "success",
                 title: "Sign Out Successfull",
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1000
               });
         })
     }
@@ -37,14 +37,14 @@ const Navbar = () => {
                     <img className='w-24 max-sm:w-18' src="logo.png" alt="logo" />
                 </div>
                 <div className={ `max-sm:hidden font-medium text-xl max-sm:text-sm flex max-sm:gap-2 gap-10 ${isAtTop ? "text-black" : "text-white"}`}>
-                    <NavLink  className={({isActive}) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} cursor-pointer hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/"}><button>Home</button></NavLink>
-                    <NavLink  className={({isActive}) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} cursor-pointer hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/queries"}><button>Queries</button></NavLink>
+                    <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/"}><button className='cursor-pointer'>Home</button></NavLink>
+                    <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/queries"}><button className='cursor-pointer'>Queries</button></NavLink>
                     {!loading && user ? <>
-                        <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} cursor-pointer hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/recommendationsForMe"}><button>Recommendations For Me</button></NavLink>
-                        <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} cursor-pointer hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/myQueries"}><button>My Queries</button></NavLink>
-                        <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} cursor-pointer hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/myRecommendations"}><button>My Recommendations</button></NavLink>
+                        <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/recommendationsForMe"}><button className='cursor-pointer'>Recommendations For Me</button></NavLink>
+                        <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/myQueries"}><button className='cursor-pointer'>My Queries</button></NavLink>
+                        <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/myRecommendations"}><button className='cursor-pointer'>My Recommendations</button></NavLink>
                     </> : ""}
-                    <NavLink  className={({isActive}) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} cursor-pointer hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/contact"}><button>Contact</button></NavLink>
+                    <NavLink className={({ isActive }) => `relative after:absolute after:-bottom-[3px] after:left-0 ${isActive ? "after:h-[6px] after:w-full" : "after:w-0 after:h-[3px]"} hover:after:w-full after:duration-300 after:bg-[#15c39a]`} to={"/contact"}><button className='cursor-pointer'>Contact</button></NavLink>
 
                 </div>
                 

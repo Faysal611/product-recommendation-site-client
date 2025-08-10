@@ -26,7 +26,7 @@ const AddQuery = () => {
                         icon: "success",
                         title: "Query added",
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 1000
                     });
                 }
             })

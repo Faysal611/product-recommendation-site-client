@@ -2,7 +2,7 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <div className='ml-5 mt-29 mb-30'>
+        <div className='ml-5 my-34 mb-30'>
             <p className='font-bold text-4xl max-sm:text-2xl mb-6 ml-4'>Have Any <span className='text-[#37328b]'>Questions</span>? Checkout The <span className='text-[#15c39a]'>FAQ</span></p>
             <div className="collapse collapse-arrow bg-base-100 border border-base-300">
                 <input type="radio" name="my-accordion-2" defaultChecked />

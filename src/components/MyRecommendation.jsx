@@ -3,12 +3,14 @@ import useAllContext from '../hooks/useAllContext';
 import Loading from './Loading';
 import axios from 'axios';
 import RecTableRow from './RecTableRow';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 const MyRecommendation = () => {
     const { user, loading, firebaseAccessToken } = useAllContext();
     const [allData, setAllData] = useState([]);
     const [refresh, setRefresh] = useState(true);
 
+    useScrollToTop();
     useEffect(() => {
         axios.get(`https://product-recommendation-system-serve.vercel.app/myRecommendations?email=${user.email}`, {
             headers: {

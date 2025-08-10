@@ -17,9 +17,11 @@ const HomeQueries = () => {
 
 
     return (
-        <div className='my-25 w-11/12 mx-auto'>
+        <div className='my-34 w-11/12 mx-auto'>
             <p className='text-4xl font-bold text-[#302c78] mb-10'>Queries Posted Recently</p>
-            {loading ? <Loading></Loading> : allData.map((data, index) =><Card key={index} data={data}></Card>)}
+            <div className='flex gap-5 flex-wrap justify-center'>
+                {loading ? <Loading></Loading> : allData.map((data, index) => <Card key={index} data={data}></Card>)}
+            </div>
         </div>
     );
 };

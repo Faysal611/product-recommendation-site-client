@@ -6,7 +6,7 @@ const Footer = () => {
             <aside>
                 <img src="logo.png" className='w-50 max-sm:w-30' />
                 <p className='relative -top-5 font-semibold'>
-                    Product Recommendation System
+                    Product Recommendation Hub
 
                 </p>
             </aside>
