@@ -17,7 +17,7 @@ import ContactPage from "./components/ContactPage";
 export const router = createBrowserRouter([
     {
         path: "/",
-        errorElement: Error,
+        errorElement: <Error></Error>,
         Component: Layout,
         children: [
             {
