@@ -5,6 +5,7 @@ import HomeQueries from './HomeQueries';
 import Carousel from './Carousel';
 import Faq from './Faq';
 import useScrollToTop from '../hooks/useScrollToTop';
+import NewsLetter from './NewsLetter';
 
 const Home = () => {
     useScrollToTop();
@@ -13,6 +14,7 @@ const Home = () => {
             <Intro></Intro>
             <Carousel></Carousel>
             <HomeQueries></HomeQueries>
+            <NewsLetter></NewsLetter>
             <Faq></Faq>
         </div>
     );

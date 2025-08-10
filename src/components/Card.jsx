@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Card = ({data}) => {
 
     return (
-        <div className='flex-col max-w-[300px] max-sm:flex-col gap-5 max-sm:gap-0 p-5 bg-gray-200 my-10 rounded-2xl border border-gray-300 hover:border-gray-600 duration-200'>
+        <div className='flex-col max-w-[300px] max-sm:flex-col gap-5 max-sm:gap-0 p-5 bg-gray-100 my-10 rounded-2xl border border-gray-300 hover:border-gray-600 duration-200'>
             <div className='flex flex-col justify-center'>
                 <img className='w-[250px] h-[165px] object-cover rounded-xl' src={data.productPhotoURL} alt="image" />
             </div>

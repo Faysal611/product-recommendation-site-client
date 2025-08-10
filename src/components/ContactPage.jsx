@@ -21,7 +21,7 @@ export default function ContactPage() {
         }
 
         const to = "faysalhasan950@gmail.com";
-        const mailSubject = subject || "Contact from product recommendation site";
+        const mailSubject = subject || "Mail from product recommendation site";
         const bodyLines = [];
         if (name) bodyLines.push(`Name: ${name}`);
         if (email) bodyLines.push(`Reply-to: ${email}`);
@@ -31,7 +31,7 @@ export default function ContactPage() {
 
         const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
 
-        window.open(gmailURL);
+        window.open(gmailURL, "_blank", );
 
         setStatus({ type: "success", msg: "Opening your mail client..." });
     };
