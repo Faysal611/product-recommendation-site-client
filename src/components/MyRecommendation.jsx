@@ -6,9 +6,10 @@ import RecTableRow from './RecTableRow';
 import useScrollToTop from '../hooks/useScrollToTop';
 
 const MyRecommendation = () => {
-    const { user, loading, firebaseAccessToken } = useAllContext();
+    const { user, firebaseAccessToken } = useAllContext();
     const [allData, setAllData] = useState([]);
     const [refresh, setRefresh] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     useScrollToTop();
     useEffect(() => {
@@ -18,6 +19,7 @@ const MyRecommendation = () => {
             }
         }).then(res => {
             setAllData(res.data)
+            setLoading(false)
         })
     }, [refresh])
 

@@ -15,7 +15,6 @@ export default function ContactPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // basic validation
         if (!email && !name && !message) {
             setStatus({ type: "error", msg: "Please fill at least your name or email and a message." });
             return;
