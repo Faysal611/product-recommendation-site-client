@@ -4,6 +4,7 @@ import Loading from './Loading';
 import axios from 'axios';
 import RecTableRowForMe from './RecTableRowForMe';
 import UseSetTitle from '../hooks/UseSetTitle';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 const RecommendationForMe = () => {
     const {user, firebaseAccessToken} = useAllContext();
@@ -21,6 +22,8 @@ const RecommendationForMe = () => {
             setLoading(false);
         })
     }, [])
+    
+    useScrollToTop();
 
     if(loading) {
         return(

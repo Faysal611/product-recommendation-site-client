@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react"
 import UseSetTitle from "../hooks/UseSetTitle";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 export default function ContactPage() {
     const [name, setName] = useState("");
@@ -14,7 +15,8 @@ export default function ContactPage() {
     const accent = "#fdbe32";
 
     UseSetTitle("Contact");
-
+    useScrollToTop();
+    
     const handleSubmit = (e) => {
         e.preventDefault();
 

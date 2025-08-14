@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
-        <footer className="footer-bg footer-phone footer sm:footer-horizontal text-base-content p-12 mt-12">
+        <footer className="footer text-white bg-[#161616] sm:footer-horizontal py-22 pl-10 mt-12">
             <aside>
                 <img src="logo.png" className='w-50 max-sm:w-30' />
                 <p className='relative -top-5 font-semibold'>
@@ -12,23 +13,23 @@ const Footer = () => {
             </aside>
             <nav>
                 <h6 className="footer-title">Services</h6>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <Link to={"/queries"} className="link link-hover">Queries</Link>
+                <Link to={"/recommendationsForMe"} className="link link-hover">For me</Link>
+                <Link to={"/myQueries"} className="link link-hover">My queries</Link>
+                <Link to={"/contact"} className="link link-hover">Advertisement</Link>
             </nav>
             <nav>
-                <h6 className="footer-title">Company</h6>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <h6 className="footer-title">Socials</h6>
+                <a  target="_blank" href='https://www.linkedin.com/in/md-faysal-hasan/' className="link link-hover">LinkedIn</a>
+                <a  target="_blank" href='https://www.facebook.com/faysal.hasan.14661' className="link link-hover">Facebook</a>
+                <a  target="_blank" href='https://www.youtube.com/@faysalhasan9769' className="link link-hover">Youtube</a>
+                <a  target="_blank" href='https://x.com/FaysalH044' className="link link-hover">Twitter</a>
             </nav>
             <nav>
                 <h6 className="footer-title">Legal</h6>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
+                <Link to={"/contact"} className="link link-hover">Terms of use</Link>
+                <Link to={"/contact"} className="link link-hover">Privacy policy</Link>
+                <Link to={"/contact"} className="link link-hover">Cookie policy</Link>
             </nav>
         </footer>
     );

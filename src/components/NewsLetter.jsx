@@ -5,7 +5,7 @@ import Lottie from 'lottie-react';
 const NewsLetter = () => {
     return (
         <div className='flex flex-col items-center bg-gray-100 rounded-2xl'>
-            <Lottie style={{width: 250}} animationData={email} loop={true}></Lottie>
+            <Lottie style={{width: 300}} animationData={email} loop={true}></Lottie>
             <h1 className='text-3xl font-bold text-gray-800'>Subscribe Newsletter</h1>
             <h2 className='font-gray-400 w-1/3 text-center'>Never miss our latest updates, podcasts etc. Our newsletter is once a week, every Friday. </h2>
             <div className='mt-3'>
